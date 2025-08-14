@@ -5,6 +5,11 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 
 ---
 
+## 📄 Documento de Requisitos
+📎 [Documento de Requisitos](https://docs.google.com/document/d/1R314KmywxrJnf8lMydXkawByNYNznzh-jtw5UZWZ9bg/edit?usp=sharing)
+
+---
+
 ## 🎯 Objetivos
 - Melhorar a experiência dos usuários no transporte circular da UFPB.
 - Reduzir incertezas sobre atrasos ou mudanças na rota.
