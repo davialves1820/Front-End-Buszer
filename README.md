@@ -46,25 +46,14 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 
 ## 📖 Casos de Uso
 
-### **[UC01] Consulta de Horário**
-Permite que o usuário consulte os horários previstos de saída e chegada do ônibus nos principais pontos.
-
-### **[UC02] Visualização da Rota**
-Exibe no mapa a rota completa do ônibus, com indicação em tempo real da sua posição.
-
-### **[UC03] Estimativa de Chegada**
-Calcula e exibe o tempo estimado de chegada do ônibus a um ponto de parada.
-
-### **[UC04] Alertas de Ocorrências**
-Envia notificações sobre atrasos, mudanças de rota e outras ocorrências.
-
-### **[UC05] Notificações Personalizadas**
-Permite configurar alertas para receber avisos sobre a aproximação do ônibus.
-
-### **[UC06] Autenticação de Usuário**
-(Desejável) Permite login no sistema para salvar preferências.
-
-### **[UC07] Controle do Administrador**
-Permite ao administrador gerenciar e monitorar toda a frota.
+| ID   | Nome | Ator | Prioridade | Descrição Resumida |
+|------|------|------|------------|--------------------|
+| UC01 | Consulta de Horário | Usuário | Essencial | Usuário consulta horários previstos de saída e chegada dos ônibus, com possibilidade de ver a rota. |
+| UC02 | Visualização da Rota | Usuário | Essencial | Exibe no mapa a rota atual do ônibus, com destaque piscante para o veículo rastreado. |
+| UC03 | Estimativa de Chegada | Usuário | Essencial | Calcula e exibe o tempo estimado de chegada do ônibus em cada ponto de parada. |
+| UC04 | Alertas de Ocorrências | Usuário | Alta | Notifica sobre atrasos, adiantamentos e chegada do ônibus, com cores indicativas no horário. |
+| UC05 | Notificações Personalizadas | Usuário | Alta | Usuário configura quais ônibus deseja receber alertas, via e-mail. |
+| UC06 | Autenticação de Usuário | Usuário | Desejável | Permite login e cadastro para acesso personalizado ao sistema. |
+| UC07 | Controle do Administrador | Administrador | Alta | Gerencia a frota, visualizando localização e enviando notificações globais ou específicas. |
 
 ---
