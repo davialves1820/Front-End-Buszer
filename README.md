@@ -17,7 +17,7 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 
 ---
 
-## 📱 Funcionalidades Principais (Requisitos Funcionais)
+## 📱 Requisitos Funcionais
 | ID      | Funcionalidade | Prioridade |
 |---------|---------------|------------|
 | RF001 | Interface móvel amigável e otimizada | **Must** |
@@ -57,3 +57,4 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 | UC07 | Controle do Administrador | Administrador | Alta | Gerencia a frota, visualizando localização e enviando notificações globais ou específicas. |
 
 ---
+
