@@ -10,6 +10,9 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 
 ---
 
+## 🖼️ Figma
+📎 [Figma](https://www.figma.com/design/MKuAPXkBIQiSlbQawefPYG/Buszer?node-id=0-1&t=GU1cPnVYtCyvlirA-1)
+
 ## 🎯 Objetivos
 - Melhorar a experiência dos usuários no transporte circular da UFPB.
 - Reduzir incertezas sobre atrasos ou mudanças na rota.
