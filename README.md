@@ -13,6 +13,8 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 ## 🖼️ Figma
 📎 [Figma](https://www.figma.com/design/MKuAPXkBIQiSlbQawefPYG/Buszer?node-id=0-1&t=GU1cPnVYtCyvlirA-1)
 
+---
+
 ## 🎯 Objetivos
 - Melhorar a experiência dos usuários no transporte circular da UFPB.
 - Reduzir incertezas sobre atrasos ou mudanças na rota.
@@ -38,12 +40,14 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 ## ⚙️ Requisitos Não Funcionais
 | ID      | Descrição | Prioridade |
 |---------|-----------|------------|
-| RN001 | Usabilidade e interface intuitiva | **Must** |
-| RN002 | Segurança dos dados e integridade da localização | **Must** |
-| RN003 | Atualizações em tempo real com atraso máximo de 1 minuto | **Must** |
-| RN004 | Disponibilidade no horário de tráfego dos ônibus | **Must** |
-| RN005 | Escalabilidade para outras frotas | **Could** |
-| RN006 | Compatibilidade com iOS e Android (responsivo) | **Must** |
+| RN001 | Usabilidade e interface intuitiva. | **Must** |
+| RN002 | Segurança dos dados e integridade da localização. | **Must** |
+| RN003 | Atualizações em tempo real com atraso máximo de 1 minuto. | **Must** |
+| RN004 | Disponibilidade no horário de tráfego dos ônibus. | **Must** |
+| RN005 | Escalabilidade para outras frotas. | **Could** |
+| RN006 | Compatibilidade com iOS e Android (responsivo). | **Must** |
+| RN007 | O sistema deve ser capaz de rodar em todos os navegadores modernos(Portabilidade). | **Must** |
+| RN008 |  O site deve ser compatível com dispositivos móveis iOS e Android. Ele deve ser responsivo e se adaptar a diferentes tamanhos de tela. | **Must** |
 
 ---
 
@@ -60,4 +64,5 @@ O **Buszer** é um sistema desenvolvido para permitir que estudantes e servidore
 | UC07 | Controle do Administrador | Administrador | Alta | Gerencia a frota, visualizando localização e enviando notificações globais ou específicas. |
 
 ---
+
 
