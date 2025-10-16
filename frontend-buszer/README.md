@@ -1,5 +1,7 @@
 # Arquitetura do Sistema Buszer
 
+---
+
 ## Visão Geral
 Sistema de rastreamento de ônibus universitários construído com arquitetura em camadas e princípios de microserviços.
 
@@ -77,6 +79,8 @@ Define os modelos de domínio e tipos TypeScript:
 - `FleetStats` - Estatísticas da frota
 - `Location` - Localização GPS
 
+---
+
 ## Princípios de Microserviços
 
 Embora seja uma aplicação frontend, a estrutura simula microserviços através de:
@@ -100,6 +104,8 @@ Estrutura preparada para migração para backend real:
 - Pronto para integração com Lovable Cloud/Supabase
 - Estrutura preparada para WebSocket (tracking em tempo real)
 
+---
+
 ## Estrutura de Pastas
 
 ```
@@ -119,6 +125,8 @@ src/
 └── lib/                # Utilitários
 ```
 
+---
+
 ## Design System
 
 ### Cores (HSL)
@@ -128,11 +136,15 @@ src/
 - **Destructive**: `0 84% 60%` - Vermelho (alertas)
 - **Warning**: `45 100% 51%` - Amarelo (avisos)
 
+---
+
 ### Tokens Semânticos
 Todos os componentes usam tokens do design system, não cores diretas:
 - `bg-primary`, `text-primary-foreground`
 - `bg-success`, `text-success-foreground`
 - etc.
+
+---
 
 ## Fluxo de Dados
 
@@ -147,31 +159,7 @@ User Action → Component → Service → Mock Data → Component Update
 4. Estado é atualizado
 5. `StatsCard` renderiza com novos dados
 
-## Próximos Passos para Backend Real
-
-### 1. Integração com Lovable Cloud
-- Ativar Lovable Cloud no projeto
-- Criar tabelas no Supabase:
-  - `vehicles`
-  - `drivers`
-  - `routes`
-  - `schedules`
-  - `notifications`
-
-### 2. Implementar Edge Functions
-- `track-vehicle` - Atualizar localização GPS
-- `send-notification` - Enviar notificações push
-- `update-schedule` - Atualizar horários
-
-### 3. Real-time Features
-- WebSocket para tracking ao vivo
-- Supabase Realtime para notificações
-- Live updates de status
-
-### 4. Autenticação
-- Login de administradores
-- Perfis de usuário
-- Roles (admin, motorista, aluno)
+---
 
 ## Benefícios da Arquitetura
 
