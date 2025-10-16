@@ -3,6 +3,28 @@
 ## Visão Geral
 Sistema de rastreamento de ônibus universitários construído com arquitetura em camadas e princípios de microserviços.
 
+---
+
+## 🚀 Instalação e Execução
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/davialves1820/Front-End-Buszer
+cd Front-End-Buszer
+```
+
+### 2. Configurar o Frontend
+```bash
+cd ../frontend
+npm install
+npm run dev
+```
+
+O frontend rodará em:  
+👉 `http://localhost:8000`
+
+---
+
 ## Arquitetura em Camadas
 
 ### 1. Presentation Layer (Camada de Apresentação)
