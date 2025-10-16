@@ -55,7 +55,7 @@ export const ScheduleCard = ({ schedule, onTrack }: ScheduleCardProps) => {
 
       <Button 
         onClick={onTrack}
-        className="w-full bg-success hover:bg-success/90 text-success-foreground"
+        className="w-full bg-[#90EE90] hover:bg-[#90EE90] text-[#03300B]"
       >
         Rastrear
       </Button>

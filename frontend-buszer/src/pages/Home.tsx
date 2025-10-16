@@ -21,7 +21,7 @@ const Home = () => {
             mobilidade e a rotina de estudantes e servidores, facilitando o uso do ônibus circular.
           </p>
           <Link to="/schedules">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg w-full sm:w-auto">
+            <Button size="lg" className="bg-[#017D97] hover:bg-[#06242E] text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg w-full sm:w-auto">
               RASTREAR CIRCULAR
             </Button>
           </Link>

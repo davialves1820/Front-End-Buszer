@@ -15,6 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        header: "text-white bg-transparent hover:bg-white/10", // base do Header
+        headerActive: "text-white bg-[#017D97] hover:bg-[#017D97]", // fundo ativo
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -34,12 +36,16 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  active?: boolean; // nova prop para controlar o estado ativo
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, active = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+    const finalVariant =
+      variant === "header" && active ? "headerActive" : variant; // aplica fundo ativo se necessário
+
+    return <Comp className={cn(buttonVariants({ variant: finalVariant, size, className }))} ref={ref} {...props} />;
   },
 );
 Button.displayName = "Button";

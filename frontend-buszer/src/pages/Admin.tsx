@@ -9,6 +9,7 @@ import { FleetStats, Vehicle, Notification } from '@/types/models';
 import { FleetService } from '@/services/fleetService';
 import { NotificationService } from '@/services/notificationService';
 import { toast } from 'sonner';
+import { IconButton } from '@/components/ui/IconButton';
 
 type Tab = 'fleet' | 'notifications';
 
@@ -74,14 +75,14 @@ const Admin = () => {
           <Button
             variant={activeTab === 'fleet' ? 'default' : 'outline'}
             onClick={() => setActiveTab('fleet')}
-            className={activeTab === 'fleet' ? 'bg-primary hover:bg-primary/90 text-sm sm:text-base' : 'text-sm sm:text-base'}
+            className={activeTab === 'fleet' ? 'bg-[#017D97] hover:bg-primary/90 text-sm sm:text-base' : 'text-sm sm:text-base'}
           >
             Frota
           </Button>
           <Button
             variant={activeTab === 'notifications' ? 'default' : 'outline'}
             onClick={() => setActiveTab('notifications')}
-            className={activeTab === 'notifications' ? 'bg-primary hover:bg-primary/90 text-sm sm:text-base' : 'text-sm sm:text-base'}
+            className={activeTab === 'notifications' ? 'bg-[#017D97] hover:bg-primary/90 text-sm sm:text-base' : 'text-sm sm:text-base'}
           >
             Notificações
           </Button>
@@ -102,10 +103,7 @@ const Admin = () => {
               ))}
             </div>
             <div className="flex justify-center">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 w-full sm:w-auto">
-                <Plus className="w-5 h-5" />
-                Adicionar Ônibus
-              </Button>
+              <IconButton text="Adicionar ônibus" onClick={() => console.log("clicou")} />
             </div>
           </div>
         ) : (

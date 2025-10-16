@@ -82,13 +82,13 @@ const Schedules = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8 sm:mt-12">
               <Button 
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 w-full sm:w-auto"
+                className="bg-[#017D97] hover:bg-[#06242E] text-primary-foreground px-8 w-full sm:w-auto"
               >
                 TODOS OS HORÁRIOS
               </Button>
               <Button 
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 w-full sm:w-auto"
+                className="bg-[#017D97] hover:bg-[#06242E] text-primary-foreground px-8 w-full sm:w-auto"
                 onClick={() => setViewMode('map')}
               >
                 MAPA

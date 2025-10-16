@@ -1,0 +1,79 @@
+/* ---------- Cores principais ---------- */
+:root {
+    --primary-color: #06242E; /* azul principal */
+    --primary-foreground: #ffffff; /* texto sobre o fundo */
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(30, 64, 175, 0.1);
+}
+
+/* ---------- Estrutura geral ---------- */
+.header {
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ---------- Logo ---------- */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-foreground);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header-logo:hover {
+    opacity: 0.8;
+}
+
+.header-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.header-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* ---------- Botões ---------- */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.active-btn {
+    font-size: 0.9rem;
+}
+
+.inactive-btn {
+    font-size: 0.9rem;
+    color: var(--primary-foreground) !important; 
+    background: transparent;
+}
+
+.inactive-btn:hover {
+    color: var(--primary-foreground) !important;
+    background-color: var(--hover-bg);
+}
+
+Link {
+    color: var(--primary-foreground);
+}

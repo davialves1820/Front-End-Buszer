@@ -24,7 +24,7 @@ export const VehicleCard = ({ vehicle, onTrack, onSettings }: VehicleCardProps) 
   return (
     <div className="bg-card rounded-xl p-4 sm:p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
       <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-        <div className="bg-secondary text-secondary-foreground rounded-lg w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center text-lg sm:text-xl font-bold flex-shrink-0">
+        <div className="bg-[#017D97] text-secondary-foreground rounded-lg w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center text-lg sm:text-xl font-bold flex-shrink-0">
           {vehicle.code}
         </div>
 
@@ -44,7 +44,7 @@ export const VehicleCard = ({ vehicle, onTrack, onSettings }: VehicleCardProps) 
           <div className="flex gap-2">
             <Button 
               onClick={onTrack}
-              className="bg-success hover:bg-success/90 text-success-foreground text-xs sm:text-sm"
+              className="bg-[#90EE90] hover:bg-[#90EE90] text-[#03300B] text-xs sm:text-sm"
               size="sm"
             >
               Rastrear
