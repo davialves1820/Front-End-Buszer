@@ -1,6 +1,8 @@
 import { Layout } from '../components/layout/Layout'
 import { Button } from '../components/ui/button'
 import { Link } from 'react-router-dom'
+import { IconButton } from '../components/ui/IconButton'
+
 // Importando imagens de forma compatível com Vite
 const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).href
 const ufpb_icon = new URL('../assets/img/ufpb_icon.png', import.meta.url).href
