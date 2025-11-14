@@ -12,7 +12,7 @@ const Home = () => {
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 sm:mb-8">
-            Buszer
+            BuszerZZZZZ
           </h1>
           <p className="text-base sm:text-lg text-foreground leading-relaxed mb-8 sm:mb-10 max-w-4xl mx-auto px-2">
             Acompanhe o ônibus circular em tempo real, consulte horários e receba notificações 
