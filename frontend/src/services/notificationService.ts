@@ -1,5 +1,5 @@
 // Service Layer - Notification Microservice
-import { Notification } from '@/types/models'
+import { Notification } from '../types/models'
 
 const mockNotifications: Notification[] = [
   {

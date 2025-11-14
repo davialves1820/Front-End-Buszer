@@ -1,7 +1,7 @@
-import { Notification } from '@/types/models'
-import { Button } from '@/components/ui/button'
+import { Notification } from '../../types/models'
+import { Button } from '../../components/ui/button'
 import { Settings } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 

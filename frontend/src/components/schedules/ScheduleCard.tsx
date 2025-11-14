@@ -1,8 +1,8 @@
-import { Schedule } from '@/types/models'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { Schedule } from '../../types/models'
+import { Button } from '../../components/ui/button'
+import { Badge } from '../../components/ui/badge'
 import { Clock } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 
 interface ScheduleCardProps {
   schedule: Schedule
