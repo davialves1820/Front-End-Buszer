@@ -1,5 +1,5 @@
 // Service Layer - Fleet Microservice
-import { Vehicle, FleetStats, Driver } from '@/types/models'
+import { Vehicle, FleetStats, Driver } from '../types/models'
 
 // Mock data for demonstration
 const mockVehicles: Vehicle[] = [

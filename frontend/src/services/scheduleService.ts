@@ -1,5 +1,5 @@
 // Service Layer - Schedule Microservice
-import { Schedule } from '@/types/models'
+import { Schedule } from '../types/models'
 
 const mockSchedules: Schedule[] = [
   {

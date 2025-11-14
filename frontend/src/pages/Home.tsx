@@ -1,9 +1,10 @@
-import { Layout } from '@/components/layout/Layout'
-import { Button } from '@/components/ui/button'
+import { Layout } from '../components/layout/Layout'
+import { Button } from '../components/ui/button'
 import { Link } from 'react-router-dom'
-import buszer_icon from '../assets/img/Buszer_icon.png'
-import ufpb_icon from '../assets/img/ufpb_icon.png'
-import ci_icon from '../assets/img/ci_icon.jpg'
+// Importando imagens de forma compatível com Vite
+const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).href
+const ufpb_icon = new URL('../assets/img/ufpb_icon.png', import.meta.url).href
+const ci_icon = new URL('../assets/img/ci_icon.jpg', import.meta.url).href
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 sm:mb-8">
-            BuszerZZZZZ
+            Buszer
           </h1>
           <p className="text-base sm:text-lg text-foreground leading-relaxed mb-8 sm:mb-10 max-w-4xl mx-auto px-2">
             Acompanhe o ônibus circular em tempo real, consulte horários e receba
