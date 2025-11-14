@@ -30,7 +30,8 @@ jobs:
 
       - name: Run tests
         working-directory: ./frontend
-        run: npm test -- --watch=false --ci
+        run: npm test
+
 
   # -----------------------------
   # LINT
