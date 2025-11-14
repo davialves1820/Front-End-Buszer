@@ -1,23 +1,23 @@
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
-import { NotificationService } from '@/services/notificationService';
-import { NotificationsDropdown } from '../layout/NotificationsDropdown';
-import buszer_icon from '../../assets/img/Buszer_icon.png';
-import './Header.css';
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
+import { useEffect, useState } from 'react'
+import { NotificationService } from '@/services/notificationService'
+import { NotificationsDropdown } from '../layout/NotificationsDropdown'
+import buszer_icon from '../../assets/img/Buszer_icon.png'
+import './Header.css'
 
 interface HeaderProps {
-  currentPath?: string;
+  currentPath?: string
 }
 
 export const Header = ({ currentPath = '/' }: HeaderProps) => {
-  const [unreadCount, setUnreadCount] = useState(0);
+  const [unreadCount, setUnreadCount] = useState(0)
 
   useEffect(() => {
-    NotificationService.getUnreadCount().then(setUnreadCount);
-  }, []);
+    NotificationService.getUnreadCount().then(setUnreadCount)
+  }, [])
 
-  const isActive = (path: string) => currentPath === path;
+  const isActive = (path: string) => currentPath === path
 
   return (
     <header className="header">
@@ -46,9 +46,8 @@ export const Header = ({ currentPath = '/' }: HeaderProps) => {
             </Link>
             <NotificationsDropdown unreadCount={unreadCount} />
           </div>
-
         </nav>
       </div>
     </header>
-  );
-};
+  )
+}
