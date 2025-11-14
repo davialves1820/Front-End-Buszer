@@ -1,7 +1,9 @@
 export default {
     testEnvironment: 'jsdom',
+
     transform: {
-        '^.+\\.(js|jsx)$': 'babel-jest'
+        '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     },
-    setupFilesAfterEnv: ['@testing-library/jest-dom']
-}
+
+    setupFilesAfterEnv: ['@testing-library/jest-dom'],
+};
