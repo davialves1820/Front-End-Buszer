@@ -5,11 +5,16 @@ export default {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
 
-  moduleNameMapper: {
+    moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+
+    // Mock de CSS
     '\\.(css|less|scss)$': 'identity-obj-proxy',
+
+    // Mock de imagens
     '\\.(png|jpg|jpeg|gif|svg|webp|ico)$': '<rootDir>/__mocks__/fileMock.js',
-  },
+    },
+
 
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
 };
