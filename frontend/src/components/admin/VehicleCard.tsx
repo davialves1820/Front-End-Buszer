@@ -1,13 +1,13 @@
-import { Vehicle } from '@/types/models';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Settings } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Vehicle } from '@/types/models'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Settings } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 interface VehicleCardProps {
-  vehicle: Vehicle;
-  onTrack: () => void;
-  onSettings: () => void;
+  vehicle: Vehicle
+  onTrack: () => void
+  onSettings: () => void
 }
 
 const statusConfig = {
@@ -15,11 +15,11 @@ const statusConfig = {
   delayed: { label: 'Atrasado', className: 'bg-destructive text-destructive-foreground' },
   early: { label: 'Adiantado', className: 'bg-success text-success-foreground' },
   inactive: { label: 'Inativo', className: 'bg-muted text-muted-foreground' },
-  maintenance: { label: 'Manutenção', className: 'bg-muted text-muted-foreground' },
-};
+  maintenance: { label: 'Manutenção', className: 'bg-muted text-muted-foreground' }
+}
 
 export const VehicleCard = ({ vehicle, onTrack, onSettings }: VehicleCardProps) => {
-  const status = statusConfig[vehicle.status];
+  const status = statusConfig[vehicle.status]
 
   return (
     <div className="bg-card rounded-xl p-4 sm:p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
@@ -38,11 +38,11 @@ export const VehicleCard = ({ vehicle, onTrack, onSettings }: VehicleCardProps) 
         </div>
 
         <div className="flex items-center gap-2 flex-shrink-0 w-full sm:w-auto justify-between sm:justify-end">
-          <Badge className={cn("whitespace-nowrap text-xs", status.className)}>
+          <Badge className={cn('whitespace-nowrap text-xs', status.className)}>
             {status.label}
           </Badge>
           <div className="flex gap-2">
-            <Button 
+            <Button
               onClick={onTrack}
               className="bg-[#90EE90] hover:bg-[#90EE90] text-[#03300B] text-xs sm:text-sm"
               size="sm"
@@ -61,5 +61,5 @@ export const VehicleCard = ({ vehicle, onTrack, onSettings }: VehicleCardProps) 
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

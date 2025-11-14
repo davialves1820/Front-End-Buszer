@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { Header } from '../Header/Header';
+import { ReactNode } from 'react'
+import { Header } from '../Header/Header'
 
 interface LayoutProps {
-  children: ReactNode;
-  currentPath: string;
+  children: ReactNode
+  currentPath: string
 }
 
 export const Layout = ({ children, currentPath }: LayoutProps) => {
@@ -12,5 +12,5 @@ export const Layout = ({ children, currentPath }: LayoutProps) => {
       <Header currentPath={currentPath} />
       <main>{children}</main>
     </div>
-  );
-};
+  )
+}

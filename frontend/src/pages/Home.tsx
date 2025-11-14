@@ -1,9 +1,9 @@
-import { Layout } from '@/components/layout/Layout';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import buszer_icon from '../assets/img/Buszer_icon.png';
-import ufpb_icon from '../assets/img/ufpb_icon.png';
-import ci_icon from '../assets/img/ci_icon.jpg';
+import { Layout } from '@/components/layout/Layout'
+import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
+import buszer_icon from '../assets/img/Buszer_icon.png'
+import ufpb_icon from '../assets/img/ufpb_icon.png'
+import ci_icon from '../assets/img/ci_icon.jpg'
 
 const Home = () => {
   return (
@@ -15,13 +15,17 @@ const Home = () => {
             BuszerZZZZZ
           </h1>
           <p className="text-base sm:text-lg text-foreground leading-relaxed mb-8 sm:mb-10 max-w-4xl mx-auto px-2">
-            Acompanhe o ônibus circular em tempo real, consulte horários e receba notificações 
-            personalizadas para tornar sua experiência de transporte mais simples e prática. Este sistema foi 
-            desenvolvido por alunos do Centro de Informática da UFPB, com o objetivo de melhorar a 
-            mobilidade e a rotina de estudantes e servidores, facilitando o uso do ônibus circular.
+            Acompanhe o ônibus circular em tempo real, consulte horários e receba
+            notificações personalizadas para tornar sua experiência de transporte mais
+            simples e prática. Este sistema foi desenvolvido por alunos do Centro de
+            Informática da UFPB, com o objetivo de melhorar a mobilidade e a rotina de
+            estudantes e servidores, facilitando o uso do ônibus circular.
           </p>
           <Link to="/schedules">
-            <Button size="lg" className="bg-[#017D97] hover:bg-[#06242E] text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg w-full sm:w-auto">
+            <Button
+              size="lg"
+              className="bg-[#017D97] hover:bg-[#06242E] text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
+            >
               RASTREAR CIRCULAR
             </Button>
           </Link>
@@ -32,12 +36,13 @@ const Home = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-8 sm:mb-12">
             Quem somos?
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="text-foreground leading-relaxed px-2">
               <p className="text-base sm:text-lg">
-                Este sistema foi desenvolvido por alunos do Centro de Informática da UFPB, com o objetivo de melhorar a 
-                mobilidade e a rotina de estudantes e servidores, facilitando o uso do ônibus circular.
+                Este sistema foi desenvolvido por alunos do Centro de Informática da UFPB,
+                com o objetivo de melhorar a mobilidade e a rotina de estudantes e
+                servidores, facilitando o uso do ônibus circular.
               </p>
             </div>
 
@@ -60,12 +65,11 @@ const Home = () => {
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover shadow-lg"
               />
             </div>
-
           </div>
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
