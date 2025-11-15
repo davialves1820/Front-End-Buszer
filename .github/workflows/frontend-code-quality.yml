@@ -1,4 +1,4 @@
-name: Frontend - Code Quality Check
+name: Frontend - Code Quality
 
 on:
   push:
@@ -15,7 +15,6 @@ on:
 jobs:
   code-quality:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -50,7 +49,7 @@ jobs:
       - name: Check filename conventions
         run: |
           cd frontend
-          npm run lint | grep "Filename is not in kebab case" && exit 1 || echo "All filenames follow kebab-case convention"
+          npm run lint | grep "Filename is not in kebab case" && exit 1 || echo "All filenames follow kebab-case"
 
       - name: Build check
         run: |

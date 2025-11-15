@@ -14,7 +14,8 @@
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:unit": "vitest run --testNamePattern 'unit'",
-    "test:integration": "vitest run --testNamePattern 'integration'"
+    "test:integration": "vitest run --testNamePattern 'integration'",
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
