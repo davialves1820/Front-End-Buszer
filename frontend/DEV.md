@@ -105,3 +105,6 @@ frontend/
 | E2E (desktop+mobile)| `npx playwright test`                         |
 | Relatório Playwright | `npx playwright show-report`                  |
 
+### Observações
+
+- Para erros de identação rodar: npx prettier --write .
