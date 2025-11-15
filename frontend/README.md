@@ -3,6 +3,7 @@
 ---
 
 ## Visão Geral
+
 Sistema de rastreamento de ônibus universitários construído com arquitetura em camadas e princípios de microserviços.
 
 ---
@@ -10,12 +11,14 @@ Sistema de rastreamento de ônibus universitários construído com arquitetura e
 ## 🚀 Instalação e Execução
 
 ### 1. Clone o repositório
+
 ```bash
 git clone https://github.com/davialves1820/Front-End-Buszer
 cd Front-End-Buszer
 ```
 
 ### 2. Configurar o Frontend
+
 ```bash
 cd ../frontend
 npm install
@@ -30,9 +33,11 @@ O frontend rodará em:
 ## Arquitetura em Camadas
 
 ### 1. Presentation Layer (Camada de Apresentação)
+
 **Localização:** `src/components/` e `src/pages/`
 
 Responsável pela interface do usuário e interação:
+
 - **Components:** Componentes reutilizáveis de UI
   - `layout/Header.tsx` - Navegação principal
   - `schedules/ScheduleCard.tsx` - Card de horário
@@ -46,6 +51,7 @@ Responsável pela interface do usuário e interação:
   - `Admin.tsx` - Painel administrativo
 
 ### 2. Service Layer (Camada de Serviço)
+
 **Localização:** `src/services/`
 
 Contém a lógica de negócio e comunicação com APIs (microserviços simulados):
@@ -68,9 +74,11 @@ Contém a lógica de negócio e comunicação com APIs (microserviços simulados
   - Histórico de alertas
 
 ### 3. Data Layer (Camada de Dados)
+
 **Localização:** `src/types/models.ts`
 
 Define os modelos de domínio e tipos TypeScript:
+
 - `Vehicle` - Modelo de veículo
 - `Driver` - Modelo de motorista
 - `Route` - Modelo de rota
@@ -86,20 +94,26 @@ Define os modelos de domínio e tipos TypeScript:
 Embora seja uma aplicação frontend, a estrutura simula microserviços através de:
 
 ### 1. Separação de Responsabilidades
+
 Cada serviço tem uma responsabilidade específica e bem definida:
+
 - **Fleet Service**: Tudo relacionado a veículos e motoristas
 - **Schedule Service**: Horários e rotas
 - **Notification Service**: Alertas e comunicação
 - **Tracking Service**: Rastreamento em tempo real (preparado para implementação)
 
 ### 2. Baixo Acoplamento
+
 Os serviços são independentes e se comunicam através de interfaces bem definidas.
 
 ### 3. Alta Coesão
+
 Cada serviço agrupa funcionalidades relacionadas.
 
 ### 4. Escalabilidade
+
 Estrutura preparada para migração para backend real:
+
 - Fácil conversão para APIs REST
 - Pronto para integração com Lovable Cloud/Supabase
 - Estrutura preparada para WebSocket (tracking em tempo real)
@@ -130,6 +144,7 @@ src/
 ## Design System
 
 ### Cores (HSL)
+
 - **Primary**: `194 68% 24%` - Teal escuro (header, navegação)
 - **Secondary**: `194 100% 42%` - Cyan (botões ativos, badges)
 - **Success**: `142 70% 45%` - Verde (ações positivas)
@@ -139,7 +154,9 @@ src/
 ---
 
 ### Tokens Semânticos
+
 Todos os componentes usam tokens do design system, não cores diretas:
+
 - `bg-primary`, `text-primary-foreground`
 - `bg-success`, `text-success-foreground`
 - etc.
@@ -153,6 +170,7 @@ User Action → Component → Service → Mock Data → Component Update
 ```
 
 ### Exemplo: Carregar Estatísticas da Frota
+
 1. `Admin.tsx` monta o componente
 2. `useEffect` chama `FleetService.getFleetStats()`
 3. Service retorna dados mockados

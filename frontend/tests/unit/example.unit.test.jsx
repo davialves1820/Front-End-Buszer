@@ -1,24 +1,48 @@
-import { describe, it, expect } from "vitest";
-import { renderHookWithProviders, waitForCondition } from "../utils/test-utils";
-import { useExample } from "../../src/hooks/useExample"; // substitua pelo seu hook real
+// tests/unit/useToast.unit.test.jsx
+import { describe, it, expect } from 'vitest'
+import { renderHook, act } from '@testing-library/react-hooks'
+import { useToast } from '../../src/hooks/useToast'
 
-describe("Hook useExample", () => {
-  it("deve retornar dados iniciais corretamente", async () => {
-    const { result } = renderHookWithProviders(() => useExample());
+describe('Hook useToast', () => {
+  it('deve adicionar um toast', () => {
+    const { result } = renderHook(() => useToast())
 
-    // Espera até que os dados estejam disponíveis
-    await waitForCondition(() => result.current.data !== undefined);
+    act(() => {
+      result.current.toast({ title: 'Teste' })
+    })
 
-    expect(result.current.data).toBeDefined();
-    expect(result.current.isLoading).toBe(false);
-  });
+    expect(result.current.toasts.length).toBe(1)
+    expect(result.current.toasts[0].title).toBe('Teste')
+    expect(result.current.toasts[0].open).toBe(true)
+  })
 
-  it("deve lidar com erro corretamente", async () => {
-    const { result } = renderHookWithProviders(() => useExample("fail")); // parâmetro para simular erro
+  it('deve atualizar um toast', () => {
+    const { result } = renderHook(() => useToast())
 
-    await waitForCondition(() => result.current.isError === true);
+    let toastInstance
+    act(() => {
+      toastInstance = result.current.toast({ title: 'Original' })
+    })
 
-    expect(result.current.data).toBeUndefined();
-    expect(result.current.isError).toBe(true);
-  });
-});
+    act(() => {
+      toastInstance.update({ title: 'Atualizado' })
+    })
+
+    expect(result.current.toasts[0].title).toBe('Atualizado')
+  })
+
+  it('deve dar dismiss no toast', () => {
+    const { result } = renderHook(() => useToast())
+
+    let toastInstance
+    act(() => {
+      toastInstance = result.current.toast({ title: 'Para fechar' })
+    })
+
+    act(() => {
+      toastInstance.dismiss()
+    })
+
+    expect(result.current.toasts[0].open).toBe(false)
+  })
+})
