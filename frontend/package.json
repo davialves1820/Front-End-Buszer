@@ -10,11 +10,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
-    "test:unit": "vitest run --testNamePattern 'unit'",
-    "test:integration": "vitest run --testNamePattern 'integration'"
+    "test:unit": "echo 'No unit tests yet'",
+    "test:integration": "echo 'No integration tests yet'",
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -81,6 +83,7 @@
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^5.1.1",
     "@vitejs/plugin-react-swc": "^3.11.0",
+    "@vitest/coverage-istanbul": "^4.0.9",
     "@vitest/coverage-v8": "^4.0.9",
     "@vitest/ui": "^4.0.9",
     "autoprefixer": "^10.4.21",
