@@ -13,7 +13,7 @@ export default defineConfig({
     threads: false,
     globals: true, // permite usar test/expect sem importar
     environment: 'jsdom', // necessário para render/react-testing-library
-    setupFiles: './src/setupTests.ts', // opcional, para configurar RTL ou jest-dom
+    //setupFiles: './src/setupTests.ts', // opcional, para configurar RTL ou jest-dom
     include: [
       //'tests/unit/**/*.test.{js,ts,jsx,tsx}',
       //'tests/integration/**/*.test.{js,ts,jsx,tsx}',
