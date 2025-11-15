@@ -11,8 +11,16 @@ export default defineConfig({
   },
   test: {
     globals: true,         // permite usar test/expect sem importar
-    environment: 'jsdom',  // ✅ necessário para render/react-testing-library
+    environment: 'jsdom',  // necessário para render/react-testing-library
     setupFiles: './src/setupTests.ts', // opcional, para configurar RTL ou jest-dom
-    include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}']
+    include: [
+      'frontend/tests/unit/**/*.test.{js,ts,jsx,tsx}',
+      'frontend/tests/integration/**/*.test.{js,ts,jsx,tsx}',
+      'src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+    reporters: 'verbose',
+    coverage: {
+    provider: 'istanbul',
+    reporter: ['text', 'lcov'],
+    }
   }
 })
