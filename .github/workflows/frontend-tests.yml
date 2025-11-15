@@ -24,22 +24,12 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd frontend
-          npm ci
+        working-directory: frontend
+        run: npm ci
 
       - name: Run unit tests
-        run: |
-          cd frontend
-          npm run test -- --coverage --maxWorkers=2
-
-      - name: Upload coverage
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: unit-test-coverage
-          path: frontend/coverage/
-          retention-days: 7
+        working-directory: frontend
+        run: npm run test:unit
 
   integration-tests:
     runs-on: ubuntu-latest
@@ -52,22 +42,12 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd frontend
-          npm ci
+        working-directory: frontend
+        run: npm ci
 
-      - name: Run integration tests (Vitest)
-        run: |
-          cd frontend
-          npm run test:integration -- --run --reporter=verbose
-
-      - name: Upload integration test results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: integration-test-results
-          path: frontend/test-results/
-          retention-days: 7
+      - name: Run integration tests
+        working-directory: frontend
+        run: npm run test:integration
 
   e2e-tests:
     runs-on: ubuntu-latest
@@ -80,24 +60,20 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd frontend
-          npm ci
+        working-directory: frontend
+        run: npm ci
 
       - name: Build application
-        run: |
-          cd frontend
-          npm run build
+        working-directory: frontend
+        run: npm run build
 
       - name: Install Playwright browsers
-        run: |
-          cd frontend
-          npx playwright install --with-deps chromium firefox webkit
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run E2E tests (Playwright)
-        run: |
-          cd frontend
-          npx playwright test --reporter=html
+        working-directory: frontend
+        run: npx playwright test --reporter=html
 
       - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v4
