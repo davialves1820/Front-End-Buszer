@@ -25,8 +25,11 @@ export default tseslint.config(
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'import/no-unresolved': 'off', // <- IMPORTANTE
-        // Garante que variáveis não usadas são erros
-      'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+      // Garante que variáveis não usadas são erros
+      'no-unused-vars': [
+        'error',
+        { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
+      ],
       '@typescript-eslint/no-unused-vars': ['error']
     }
   }
