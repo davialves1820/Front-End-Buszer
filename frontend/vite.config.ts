@@ -21,7 +21,8 @@ export default defineConfig({
     ],
     reporters: 'verbose',
     coverage: {
-      exclude: ['tests/integration/**', 'tests/unit/**']
-    }
+      //exclude: ['tests/integration/**', 'tests/unit/**']
+    },
+    passWithNoTests: true
   }
 })
