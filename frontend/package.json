@@ -14,7 +14,7 @@
     "prepare": "husky",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
-    "test:unit": "vitest run --testNamePattern 'unit'",
+    "test:unit": "echo 'No unit tests yet'",
     "test:integration": "echo 'No integration tests yet'",
     "test:e2e": "npx playwright test"
   },
