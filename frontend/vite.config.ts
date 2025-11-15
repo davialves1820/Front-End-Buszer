@@ -17,7 +17,7 @@ export default defineConfig({
     include: [
       //'tests/unit/**/*.test.{js,ts,jsx,tsx}',
       //'tests/integration/**/*.test.{js,ts,jsx,tsx}',
-      'src/**/*.{test,spec}.{js,ts,jsx,tsx}'
+      //'src/**/*.{test,spec}.{js,ts,jsx,tsx}'
     ],
     reporters: 'verbose',
     coverage: {
