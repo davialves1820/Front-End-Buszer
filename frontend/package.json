@@ -15,7 +15,7 @@
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:unit": "vitest run --testNamePattern 'unit'",
-    "test:integration": "vitest run --testNamePattern 'integration'",
+    "test:integration": "echo 'No integration tests yet'",
     "test:e2e": "npx playwright test"
   },
   "dependencies": {

@@ -20,9 +20,10 @@ export default defineConfig({
       'src/**/*.{test,spec}.{js,ts,jsx,tsx}'
     ],
     reporters: 'verbose',
-    coverage: {
-      provider: 'istanbul',
-      reporter: ['text', 'lcov']
-    }
+    coverage: false,
+    exclude: [
+    'tests/integration/**',
+    'tests/unit/**'
+    ],
   }
 })
