@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-O frontend rodará em:  
+O frontend rodará em:
 
 `http://localhost:5173/`
 
