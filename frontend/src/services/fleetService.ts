@@ -1,5 +1,5 @@
 // Service Layer - Fleet Microservice
-import { Vehicle, FleetStats, Driver } from '../types/models'
+import { Vehicle, FleetStats } from '../types/models'
 
 // Mock data for demonstration
 const mockVehicles: Vehicle[] = [
@@ -27,7 +27,7 @@ export class FleetService {
   static async getFleetStats(): Promise<FleetStats> {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 300))
-
+    /*
     const activeVehicles = mockVehicles.filter(
       (v) => v.status === 'active' || v.status === 'delayed' || v.status === 'early'
     ).length
@@ -35,7 +35,7 @@ export class FleetService {
       (v) => v.status === 'inactive' || v.status === 'maintenance'
     ).length
     const activeDrivers = mockVehicles.filter((v) => v.driver?.active).length
-
+*/
     return {
       totalVehicles: 4,
       activeVehicles: 2,

@@ -13,7 +13,7 @@ Sistema de rastreamento de ônibus universitários construído com arquitetura e
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/davialves1820/Front-End-Buszer
+git clone https://github.com/davialves1820/FrontEnd-Buszer
 cd Front-End-Buszer
 ```
 
@@ -25,8 +25,9 @@ npm install
 npm run dev
 ```
 
-O frontend rodará em:  
-👉 `http://localhost:8000`
+O frontend rodará em:
+
+`http://localhost:5173/`
 
 ---
 
@@ -178,12 +179,3 @@ User Action → Component → Service → Mock Data → Component Update
 5. `StatsCard` renderiza com novos dados
 
 ---
-
-## Benefícios da Arquitetura
-
-✅ **Manutenibilidade**: Código organizado e fácil de entender
-✅ **Testabilidade**: Serviços podem ser testados isoladamente
-✅ **Escalabilidade**: Fácil adicionar novos microserviços
-✅ **Reutilização**: Componentes e serviços reutilizáveis
-✅ **Separação de Concerns**: Cada camada tem responsabilidade clara
-✅ **Preparado para Backend**: Estrutura pronta para APIs reais

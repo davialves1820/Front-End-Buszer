@@ -29,6 +29,7 @@ npm ci
 - **Localização**: `frontend/src/__tests__` ou `frontend/tests/unit` / `frontend/tests/integration`
 - **Framework**: [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/)
 - **Uso**:
+
   ```bash
   # Unitários
   npm run test:unit
@@ -36,6 +37,7 @@ npm ci
   # Integração
   npm run test:integration
   ```
+
 - **Exemplo de teste unitário**: validação de componentes React com `render` e `screen`.
 
 ---
@@ -55,6 +57,7 @@ npm ci
   ```
 
 - **Opções úteis**:
+
   ```bash
   # Roda testes em headful (janela visível)
   npx playwright test --headed
@@ -98,12 +101,12 @@ frontend/
 
 ## 5️⃣ Comandos resumidos
 
-| Tipo de teste      | Comando                                        |
-|-------------------|-----------------------------------------------|
-| Unitários          | `npm run test:unit`                           |
-| Integração         | `npm run test:integration`                    |
-| E2E (desktop+mobile)| `npx playwright test`                         |
-| Relatório Playwright | `npx playwright show-report`                  |
+| Tipo de teste        | Comando                      |
+| -------------------- | ---------------------------- |
+| Unitários            | `npm run test:unit`          |
+| Integração           | `npm run test:integration`   |
+| E2E (desktop+mobile) | `npx playwright test`        |
+| Relatório Playwright | `npx playwright show-report` |
 
 ### Observações
 
