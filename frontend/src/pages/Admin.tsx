@@ -46,7 +46,7 @@ const Admin = () => {
     toast.info(`Rastreando ${vehicle.code}`)
   }
 
-  const handleSettings = (id: string) => {
+  const handleSettings = () => {
     toast.info('Configurações')
   }
 
@@ -129,7 +129,7 @@ const Admin = () => {
                   key={vehicle.id}
                   vehicle={vehicle}
                   onTrack={() => handleTrack(vehicle)}
-                  onSettings={() => handleSettings(vehicle.id)}
+                  onSettings={() => handleSettings()}
                 />
               ))}
             </div>
@@ -147,7 +147,7 @@ const Admin = () => {
                 <NotificationCard
                   key={notification.id}
                   notification={notification}
-                  onSettings={() => handleSettings(notification.id)}
+                  onSettings={() => handleSettings()}
                 />
               ))}
             </div>
