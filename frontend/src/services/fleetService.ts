@@ -27,7 +27,7 @@ export class FleetService {
   static async getFleetStats(): Promise<FleetStats> {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 300))
-/*
+    /*
     const activeVehicles = mockVehicles.filter(
       (v) => v.status === 'active' || v.status === 'delayed' || v.status === 'early'
     ).length
