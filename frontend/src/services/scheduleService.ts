@@ -33,38 +33,6 @@ const mockSchedules: Schedule[] = [
     departureTime: '8:00h',
     status: 'early',
     hasSchedule: true
-  },
-  {
-    id: '5',
-    campus: 'Mangabeira',
-    line: 'CTOR',
-    departureTime: '8:00h',
-    status: 'active',
-    hasSchedule: false
-  },
-  {
-    id: '6',
-    campus: 'Castelo Branco',
-    line: 'CT',
-    departureTime: '8:00h',
-    status: 'delayed',
-    hasSchedule: true
-  },
-  {
-    id: '7',
-    campus: 'Rio Tinto',
-    line: 'CTOR',
-    departureTime: '8:00h',
-    status: 'inactive',
-    hasSchedule: true
-  },
-  {
-    id: '8',
-    campus: 'Castelo Branco',
-    line: 'CT',
-    departureTime: '8:00h',
-    status: 'active',
-    hasSchedule: true
   }
 ]
 

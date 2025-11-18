@@ -39,11 +39,11 @@ export const Header = ({ currentPath = '/' }: HeaderProps) => {
                 CIRCULAR
               </Button>
             </Link>
-            <Link to="/admin">
+            {/*<Link to="/admin">
               <Button variant="header" size="sm" active={isActive('/admin')}>
                 {isActive('/admin') ? 'SAIR' : 'LOGIN'}
               </Button>
-            </Link>
+            </Link>*/}
             <NotificationsDropdown unreadCount={unreadCount} />
           </div>
         </nav>
