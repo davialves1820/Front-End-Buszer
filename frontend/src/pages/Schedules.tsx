@@ -63,6 +63,7 @@ const Schedules = () => {
       setSchedules(data)
     } catch (error) {
       toast.error('Erro ao carregar horários')
+      console.error('Erro ao carregar horários:', error)
     } finally {
       setLoading(false)
     }
