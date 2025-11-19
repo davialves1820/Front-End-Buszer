@@ -1,6 +1,7 @@
 import { Layout } from '../components/layout/Layout'
 import { Button } from '../components/ui/button'
 import { Link } from 'react-router-dom'
+import { usePageView } from '../hooks/use-page-view'
 
 // Importando imagens de forma compatível com Vite
 const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).href
@@ -8,6 +9,8 @@ const ufpb_icon = new URL('../assets/img/ufpb_icon.png', import.meta.url).href
 const ci_icon = new URL('../assets/img/ci_icon.jpg', import.meta.url).href
 
 const Home = () => {
+  usePageView('Home')
+
   return (
     <Layout currentPath="/">
       <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16">

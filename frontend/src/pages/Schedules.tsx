@@ -6,6 +6,7 @@ import { Schedule } from '../types/models'
 import { ScheduleService } from '../services/scheduleService'
 import { toast } from 'sonner'
 import { MapPin, Clock } from 'lucide-react'
+import { usePageView } from '../hooks/use-page-view'
 
 // Importa o CSS do Leaflet
 import 'leaflet/dist/leaflet.css'
@@ -13,6 +14,7 @@ const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).hr
 const ci_icon = new URL('../assets/img/ci_icon.jpg', import.meta.url).href
 // Lib principal do mapa
 import L from 'leaflet'
+import posthog from 'posthog-js'
 
 /* ÍCONE DO ÔNIBUS */
 const busIcon = L.icon({
@@ -46,6 +48,8 @@ const initialLat = routeCoordinates[0][0]
 const initialLng = routeCoordinates[0][1]
 
 const Schedules = () => {
+  usePageView('Shedules')
+
   // ... (useState e loadSchedules omitidos por serem idênticos)
   const [schedules, setSchedules] = useState<Schedule[]>([])
   const [loading, setLoading] = useState(true)
@@ -71,6 +75,13 @@ const Schedules = () => {
 
   // HandleTrack (mantido)
   const handleTrack = (schedule: Schedule) => {
+    posthog.capture('clicou_no_onibus', {
+      line: schedule.line,
+      campus: schedule.campus,
+      horario: schedule.time,
+      schedule_id: schedule.id
+    })
+
     setViewMode('map')
     setTrackingEnabled(true)
     toast.info(`Rastreando ${schedule.line} - Campus ${schedule.campus}`)
