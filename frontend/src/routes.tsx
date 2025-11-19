@@ -1,21 +1,21 @@
-import Home from "./pages/Home";
-import Schedules from "./pages/Schedules";
-import NotFound from "./pages/NotFound";
+import Home from './pages/Home'
+import Schedules from './pages/Schedules'
+import NotFound from './pages/NotFound'
 
 export const routes = [
   {
-    path: "/",
+    path: '/',
     element: <Home />,
-    name: "home",
+    name: 'home'
   },
   {
-    path: "/schedules",
+    path: '/schedules',
     element: <Schedules />,
-    name: "schedules",
+    name: 'schedules'
   },
   {
-    path: "*",
+    path: '*',
     element: <NotFound />,
-    name: "not_found",
-  },
-];
+    name: 'not_found'
+  }
+]
