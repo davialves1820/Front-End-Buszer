@@ -42,6 +42,7 @@ export interface Schedule {
   departureTime: string
   status: VehicleStatus
   hasSchedule: boolean
+  time: string
 }
 
 export interface Notification {
