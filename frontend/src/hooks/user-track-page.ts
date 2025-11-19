@@ -1,25 +1,33 @@
-import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
-import posthog from 'posthog-js'
+import { useEffect } from "react";
+import { useLocation, matchRoutes } from "react-router-dom";
+import posthog from "posthog-js";
+import { routes } from "../routes";
 
 export function usePageTracking() {
-  const location = useLocation()
+  const location = useLocation();
 
   useEffect(() => {
-    const path = location.pathname
+    const matched = matchRoutes(routes, location);
 
-    // Nome amigável para cada página
-    const pageNameMap: Record<string, string> = {
-      '/': 'home',
-      '/schedules': 'schedules'
+    let pageName = "unknown";
+
+    if (matched && matched.length > 0) {
+      const route = matched[0].route;
+
+      // pega "name" se definido na rota
+      if (route.name) {
+        pageName = route.name;
+      }
+      // senão pega o path e converte para nome
+      else if (route.path) {
+        pageName = route.path.replace("/", "") || "home";
+      }
     }
 
-    // Se não existir nos mapeamentos, usa o próprio path
-    const pageName = pageNameMap[path] || 'not_found'
+    posthog.capture("page_view_custom", {
+      page: pageName,
+      path: location.pathname,
+    });
 
-    // Envia para o PostHog
-    posthog.capture('page_view_custom', {
-      page: pageName
-    })
-  }, [location])
+  }, [location]);
 }
