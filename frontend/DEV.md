@@ -4,7 +4,7 @@ Este documento descreve o setup e execução dos **testes** do frontend do Busze
 
 ---
 
-## 1️⃣ Dependências
+## 1. Dependências
 
 Certifique-se de que você tem instalado:
 
@@ -22,7 +22,7 @@ npm ci
 
 ---
 
-## 2️⃣ Tipos de Testes
+## 2. Tipos de Testes
 
 ### Unitários e de Integração (Vitest + Testing Library)
 
@@ -71,7 +71,7 @@ npm ci
 
 ---
 
-## 3️⃣ Estrutura de testes sugerida
+## 3. Estrutura de testes sugerida
 
 ```
 frontend/
@@ -88,7 +88,7 @@ frontend/
 
 ---
 
-## 4️⃣ Observações importantes
+## 4. Observações importantes
 
 - **Mobile vs Desktop**: os testes E2E rodam em mobile e desktop simulando resolução, user-agent e eventos de toque.
 - **CI**: os workflows do GitHub Actions executam automaticamente todos os testes em cada pull request.
@@ -99,7 +99,7 @@ frontend/
 
 ---
 
-## 5️⃣ Comandos resumidos
+## 5. Comandos resumidos
 
 | Tipo de teste        | Comando                      |
 | -------------------- | ---------------------------- |
