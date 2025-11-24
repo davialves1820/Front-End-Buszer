@@ -136,7 +136,9 @@ All colors MUST be HSL.
   }
 
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .hover-lift:hover {
@@ -183,7 +185,6 @@ All colors MUST be HSL.
   }
 
   @keyframes pulse {
-
     0%,
     100% {
       opacity: 1;
@@ -195,7 +196,6 @@ All colors MUST be HSL.
   }
 
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0) rotate(0deg);
@@ -207,7 +207,6 @@ All colors MUST be HSL.
   }
 
   @keyframes float-delayed {
-
     0%,
     100% {
       transform: translateY(0) rotate(0deg);
@@ -219,7 +218,6 @@ All colors MUST be HSL.
   }
 
   @keyframes gradient-shift {
-
     0%,
     100% {
       background-position: 0% 50%;
@@ -231,7 +229,6 @@ All colors MUST be HSL.
   }
 
   @keyframes glow-pulse {
-
     0%,
     100% {
       box-shadow: 0 0 20px rgba(14, 116, 144, 0.4);

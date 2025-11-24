@@ -1,21 +1,21 @@
-import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { AnimatedBackground } from "../components/ui/animatedBackground";
-import { FloatingElements } from "../components/ui/floatingElements";
-import { MouseGlow } from "../components/ui/mouseGlow";
-import { PageTransition } from "../components/ui/pageTransition";
-import { ParallaxSection } from "../components/ui/parallaxSection";
-import { motion } from "framer-motion";
-import { usePageView } from "../hooks/use-page-view";
-import Tilt from "react-parallax-tilt";
+import { Layout } from '@/components/layout/Layout'
+import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
+import { AnimatedBackground } from '../components/ui/animatedBackground'
+import { FloatingElements } from '../components/ui/floatingElements'
+import { MouseGlow } from '../components/ui/mouseGlow'
+import { PageTransition } from '../components/ui/pageTransition'
+import { ParallaxSection } from '../components/ui/parallaxSection'
+import { motion } from 'framer-motion'
+import { usePageView } from '../hooks/use-page-view'
+import Tilt from 'react-parallax-tilt'
 
-const buszer_icon = new URL("../assets/img/Buszer_icon.png", import.meta.url).href;
-const ufpb_icon = new URL("../assets/img/ufpb_icon.png", import.meta.url).href;
-const ci_icon = new URL("../assets/img/ci_icon.jpg", import.meta.url).href;
+const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).href
+const ufpb_icon = new URL('../assets/img/ufpb_icon.png', import.meta.url).href
+const ci_icon = new URL('../assets/img/ci_icon.jpg', import.meta.url).href
 
 export default function Home() {
-  usePageView("Home");
+  usePageView('Home')
 
   return (
     <PageTransition>
@@ -44,8 +44,8 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.3 }}
                 >
-                  Acompanhe o ônibus circular em tempo real, consulte horários e receba notificações
-                  personalizadas.
+                  Acompanhe o ônibus circular em tempo real, consulte horários e receba
+                  notificações personalizadas.
                 </motion.p>
 
                 <motion.div
@@ -90,12 +90,13 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
                     <p>
-                      O Buszer é uma plataforma criada por alunos do Centro de Informática da UFPB para
-                      proporcionar rastreamento confiável, horários atualizados e notificações personalizadas.
+                      O Buszer é uma plataforma criada por alunos do Centro de Informática
+                      da UFPB para proporcionar rastreamento confiável, horários
+                      atualizados e notificações personalizadas.
                     </p>
                     <p>
-                      Nosso objetivo é facilitar a mobilidade, reduzir incertezas e modernizar o uso do transporte
-                      dentro da universidade.
+                      Nosso objetivo é facilitar a mobilidade, reduzir incertezas e
+                      modernizar o uso do transporte dentro da universidade.
                     </p>
                   </motion.div>
 
@@ -120,7 +121,7 @@ export default function Home() {
                         <motion.div
                           className="p-3 rounded-3xl bg-card shadow-xl border border-border backdrop-blur-lg hover:shadow-[0_0_35px_-5px_var(--primary)] transition-all duration-300"
                           whileHover={{ rotate: index === 1 ? 6 : -6 }}
-                          transition={{ type: "spring", stiffness: 250, damping: 15 }}
+                          transition={{ type: 'spring', stiffness: 250, damping: 15 }}
                         >
                           <img
                             src={src}
@@ -141,5 +142,5 @@ export default function Home() {
         </div>
       </Layout>
     </PageTransition>
-  );
+  )
 }
