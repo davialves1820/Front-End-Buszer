@@ -1,80 +1,146 @@
-import { Layout } from '../components/layout/Layout'
-import { Button } from '../components/ui/button'
+import { Layout } from '@/components/layout/Layout'
+import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
+import { AnimatedBackground } from '../components/ui/animatedBackground'
+import { FloatingElements } from '../components/ui/floatingElements'
+import { MouseGlow } from '../components/ui/mouseGlow'
+import { PageTransition } from '../components/ui/pageTransition'
+import { ParallaxSection } from '../components/ui/parallaxSection'
+import { motion } from 'framer-motion'
 import { usePageView } from '../hooks/use-page-view'
+import Tilt from 'react-parallax-tilt'
 
-// Importando imagens de forma compatível com Vite
 const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).href
 const ufpb_icon = new URL('../assets/img/ufpb_icon.png', import.meta.url).href
 const ci_icon = new URL('../assets/img/ci_icon.jpg', import.meta.url).href
 
-const Home = () => {
+export default function Home() {
   usePageView('Home')
 
   return (
-    <Layout currentPath="/">
-      <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 sm:mb-8">
-            Buszer
-          </h1>
-          <p className="text-base sm:text-lg text-foreground leading-relaxed mb-8 sm:mb-10 max-w-4xl mx-auto px-2">
-            Acompanhe o ônibus circular em tempo real, consulte horários e receba
-            notificações personalizadas para tornar sua experiência de transporte mais
-            simples e prática. Este sistema foi desenvolvido por alunos do Centro de
-            Informática da UFPB, com o objetivo de melhorar a mobilidade e a rotina de
-            estudantes e servidores, facilitando o uso do ônibus circular.
-          </p>
-          <Link to="/schedules">
-            <Button
-              size="lg"
-              className="bg-[#017D97] hover:bg-[#06242E] text-primary-foreground px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
-            >
-              RASTREAR CIRCULAR
-            </Button>
-          </Link>
+    <PageTransition>
+      <Layout currentPath="/">
+        <div className="min-h-screen relative bg-background overflow-hidden">
+          <AnimatedBackground />
+          <FloatingElements />
+          <MouseGlow />
+
+          {/* HERO SECTION */}
+          <section className="pt-32 pb-24 px-4 relative z-20">
+            <ParallaxSection speed={-0.35}>
+              <div className="container mx-auto max-w-5xl text-center">
+                <motion.h1
+                  className="text-6xl md:text-7xl font-black mb-8 gradient-text drop-shadow-lg leading-tight"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  Buszer
+                </motion.h1>
+
+                <motion.p
+                  className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                >
+                  Acompanhe o ônibus circular em tempo real, consulte horários e receba
+                  notificações personalizadas.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7, delay: 0.4 }}
+                >
+                  <Link to="/schedules">
+                    <Button
+                      size="lg"
+                      className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-xl px-10 py-6 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_-5px_var(--secondary)] group animate-glow-pulse"
+                    >
+                      RASTREAR CIRCULAR
+                    </Button>
+                  </Link>
+                </motion.div>
+              </div>
+            </ParallaxSection>
+          </section>
+
+          {/* ABOUT SECTION */}
+          <section className="py-24 px-4 bg-muted/20 backdrop-blur-sm relative z-10">
+            <ParallaxSection speed={0.25}>
+              <div className="container mx-auto max-w-6xl">
+                <motion.h2
+                  className="text-4xl md:text-5xl font-bold text-center text-foreground mb-20 drop-shadow-sm"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  Quem somos?
+                </motion.h2>
+
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                  {/* TEXTO */}
+                  <motion.div
+                    className="space-y-6 text-lg leading-relaxed text-foreground"
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    <p>
+                      O Buszer é uma plataforma criada por alunos do Centro de Informática
+                      da UFPB para proporcionar rastreamento confiável, horários
+                      atualizados e notificações personalizadas.
+                    </p>
+                    <p>
+                      Nosso objetivo é facilitar a mobilidade, reduzir incertezas e
+                      modernizar o uso do transporte dentro da universidade.
+                    </p>
+                  </motion.div>
+
+                  {/* ÍCONES ANIMADOS COM TILT 3D + NEON */}
+                  <motion.div
+                    className="flex items-center justify-center gap-10"
+                    initial={{ opacity: 0, x: 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                  >
+                    {[buszer_icon, ufpb_icon, ci_icon].map((src, index) => (
+                      <Tilt
+                        key={index}
+                        glareEnable={true}
+                        glareMaxOpacity={0.35}
+                        glarePosition="all"
+                        scale={1.07}
+                        transitionSpeed={2000}
+                        className="rounded-3xl"
+                      >
+                        <motion.div
+                          className="p-3 rounded-3xl bg-card shadow-xl border border-border backdrop-blur-lg hover:shadow-[0_0_35px_-5px_var(--primary)] transition-all duration-300"
+                          whileHover={{ rotate: index === 1 ? 6 : -6 }}
+                          transition={{ type: 'spring', stiffness: 250, damping: 15 }}
+                        >
+                          <img
+                            src={src}
+                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36
+                                      rounded-2xl
+                                      object-contain
+                                      shadow-inner
+                                      mx-auto"
+                          />
+                        </motion.div>
+                      </Tilt>
+                    ))}
+                  </motion.div>
+                </div>
+              </div>
+            </ParallaxSection>
+          </section>
         </div>
-
-        {/* About Section */}
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-8 sm:mb-12">
-            Quem somos?
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div className="text-foreground leading-relaxed px-2">
-              <p className="text-base sm:text-lg">
-                Este sistema foi desenvolvido por alunos do Centro de Informática da UFPB,
-                com o objetivo de melhorar a mobilidade e a rotina de estudantes e
-                servidores, facilitando o uso do ônibus circular.
-              </p>
-            </div>
-
-            <div className="flex items-center justify-center gap-6 sm:gap-8">
-              <img
-                src={buszer_icon}
-                alt="Buszer Icon"
-                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover shadow-lg"
-              />
-
-              <img
-                src={ufpb_icon}
-                alt="UFPB Icon"
-                className="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-contain bg-white p-2 shadow-lg"
-              />
-
-              <img
-                src={ci_icon}
-                alt="CI icon"
-                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </Layout>
+      </Layout>
+    </PageTransition>
   )
 }
-
-export default Home
