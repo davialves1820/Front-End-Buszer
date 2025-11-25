@@ -11,7 +11,7 @@ import { usePageView } from '../hooks/use-page-view'
 import Tilt from 'react-parallax-tilt'
 
 const buszer_icon = new URL('../../public/img/Buszer_icon.png', import.meta.url).href
-const ufpb_icon = new URL('../../public/img/ufpb_icon.png', import.meta.url).href
+const ufpb_icon = new URL('../../public/img/UFPB_icon.png', import.meta.url).href
 const ci_icon = new URL('../../public/img/ci_icon.jpg', import.meta.url).href
 
 export default function Home() {

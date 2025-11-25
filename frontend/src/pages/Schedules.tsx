@@ -20,18 +20,14 @@ import { motion } from 'framer-motion'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
-// Icons
-const buszer_icon = new URL('../assets/img/Buszer_icon.png', import.meta.url).href
-const ci_icon = new URL('../assets/img/ci_icon.jpg', import.meta.url).href
-
 const busIcon = L.icon({
-  iconUrl: buszer_icon,
+  iconUrl: '../../public/img/Buszer_icon.png',
   iconSize: [40, 40],
   iconAnchor: [20, 20]
 })
 
 const destinationIcon = L.icon({
-  iconUrl: ci_icon,
+  iconUrl: '../../public/img/ci_icon.jpg',
   iconSize: [30, 30],
   iconAnchor: [15, 30]
 })
