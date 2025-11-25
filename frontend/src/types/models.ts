@@ -1,8 +1,12 @@
-// Data Layer - Domain Models
-
-export type VehicleStatus = 'active' | 'inactive' | 'maintenance' | 'delayed' | 'early'
-export type BusLine = 'CTOR' | 'CT' | 'C01' | 'C02'
-export type Campus = 'Mangabeira' | 'Castelo Branco' | 'Rio Tinto' | 'Santa Rita'
+export type VehicleStatus =
+  | 'ativo'
+  | 'inativo'
+  | 'atrasado'
+  | 'adiantado'
+  | 'parado'
+  | 'no-horario'
+export type BusLine = 'CTDR' | 'CT' | 'CI'
+export type Campus = 'Mangabeira' | 'Sede' | 'Rio Tinto' | 'Santa Rita'
 
 export interface Vehicle {
   id: string

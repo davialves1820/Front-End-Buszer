@@ -1,65 +1,60 @@
 import { Schedule } from '../../types/models'
 import { Button } from '../../components/ui/button'
-import { Badge } from '../../components/ui/badge'
-import { Clock } from 'lucide-react'
+import { Clock, Circle } from 'lucide-react'
 import { cn } from '../../lib/utils'
+import { StatusBadge } from '../../components/schedules/statusBadge'
 
 interface ScheduleCardProps {
   schedule: Schedule
   onTrack: () => void
+  className?: string
+  style?: React.CSSProperties
 }
 
-const statusConfig = {
-  active: { label: 'Ativo', className: 'bg-secondary text-secondary-foreground' },
-  delayed: { label: 'Atrasado', className: 'bg-destructive text-destructive-foreground' },
-  early: { label: 'Adiantado', className: 'bg-success text-success-foreground' },
-  inactive: { label: 'Inativo', className: 'bg-muted text-muted-foreground' },
-  maintenance: { label: 'Manutenção', className: 'bg-muted text-muted-foreground' }
-}
-
-const lineStatusConfig = {
-  true: { label: 'No horário', className: 'bg-muted text-muted-foreground' },
-  false: { label: 'Parado', className: 'bg-muted text-muted-foreground' }
-}
-
-export const ScheduleCard = ({ schedule, onTrack }: ScheduleCardProps) => {
-  const status = statusConfig[schedule.status]
-  const lineStatus = lineStatusConfig[schedule.hasSchedule ? 'true' : 'false']
-
+export const ScheduleCard = ({
+  schedule,
+  onTrack,
+  className,
+  style
+}: ScheduleCardProps) => {
   return (
-    <div className="bg-card rounded-xl p-4 sm:p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
-      <div className="flex items-start justify-between mb-3 sm:mb-4">
-        <h3 className="text-lg sm:text-xl font-semibold text-card-foreground">
-          Campus {schedule.campus}
-        </h3>
-        <Badge className={status.className}>{status.label}</Badge>
-      </div>
+    <div
+      className={cn(
+        'bg-card rounded-xl p-6 shadow-sm border border-border hover-lift hover-glow animate-slide-up group',
+        className
+      )}
+      style={style}
+    >
+      {/* Header */}
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+            Campus {schedule.campus}
+          </h3>
 
-      <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4">
-        <div className="flex items-center gap-2">
-          <div
-            className={cn(
-              'w-3 h-3 rounded-full',
-              schedule.hasSchedule ? 'bg-muted' : 'bg-success'
-            )}
-          />
-          <span className="text-sm font-medium text-card-foreground">
-            {schedule.line}
-          </span>
-          <Badge variant="outline" className={lineStatus.className}>
-            {lineStatus.label}
-          </Badge>
+          {/* Linha */}
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Circle className="h-3 w-3 fill-current transition-transform group-hover:scale-110" />
+            <span>{schedule.line}</span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Clock className="w-4 h-4" />
-          <span className="text-sm">Partida: {schedule.departureTime}</span>
+        {/* Status automatizado */}
+        <StatusBadge status={schedule.status} />
+      </div>
+
+      {/* Horário */}
+      <div className="space-y-2 mb-4">
+        <div className="flex items-center gap-2 text-sm text-foreground">
+          <Clock className="h-4 w-4 text-muted-foreground" />
+          <span>Partida: {schedule.departureTime}</span>
         </div>
       </div>
 
+      {/* Botão */}
       <Button
         onClick={onTrack}
-        className="w-full bg-[#90EE90] hover:bg-[#90EE90] text-[#03300B]"
+        className="w-full bg-success hover:bg-success/90 text-success-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg"
       >
         Rastrear
       </Button>

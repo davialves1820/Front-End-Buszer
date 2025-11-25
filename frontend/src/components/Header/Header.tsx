@@ -3,7 +3,7 @@ import { Button } from '../../components/ui/button'
 import { useEffect, useState } from 'react'
 import { NotificationService } from '../../services/notificationService'
 import { NotificationsDropdown } from '../layout/NotificationsDropdown'
-import buszer_icon from '../../assets/img/Buszer_icon.png'
+import buszer_icon from '../../../public/img/Buszer_icon.png'
 import './Header.css'
 
 interface HeaderProps {
